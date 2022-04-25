@@ -5,6 +5,7 @@ using Utility;
 
 public class Player : MonoBehaviour
 {
+    // The player class that we need to save into DataClass
     public int level;
     public int health;
 

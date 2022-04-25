@@ -6,6 +6,7 @@ using Utility;
 [System.Serializable]
 public class DataClass
 {
+    // get the data of the player and stores it in this class
     public int level;
     public int health;
     public float[] position;

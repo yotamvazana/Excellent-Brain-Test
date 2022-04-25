@@ -7,6 +7,8 @@ using Debug = UnityEngine.Debug;
 
 public class MicrobesView : MonoBehaviour
 {
+    // this is mission 2
+    //what we see here is my version of code that the junior developer wrote.
     [SerializeField] bool useDebug = true;
 
     [Space]

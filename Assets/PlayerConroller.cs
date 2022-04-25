@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerConroller : MonoBehaviour
 {
+    // this is only for visuals
     [SerializeField] private Player player;
 
     [Space]
