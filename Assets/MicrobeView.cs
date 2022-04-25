@@ -13,13 +13,18 @@ public class MicrobesView : MonoBehaviour
 
     [Space]
 
-    private Dictionary<string, Microbe> _microbes = new Dictionary<string, Microbe>();
-    [SerializeField] private Text totalAndAvgMicrobes;
+    [SerializeField] private Text totalAndAvgMicrobes; // save this instead of "getcomponent
+
+    private Dictionary<string, Microbe> _microbes = new Dictionary<string, Microbe>(); // for better perforence, list will take much longer
 
     private float totalHealth = 0f;
+    private float avgHealth = 0f;
 
     void LateUpdate()
     {
+        totalHealth = 0f;
+        avgHealth = 0f;
+
         Stopwatch sw = new Stopwatch();
         sw.Start();
 
@@ -28,7 +33,11 @@ public class MicrobesView : MonoBehaviour
             totalHealth += kvp.Value != null ? kvp.Value.health : 0f;
         }
         sw.Stop();
-        string text = $"Total microbes: {_microbes.Count} Avg health {_microbes.Count / totalHealth}";
+        avgHealth = totalHealth / _microbes.Count; // the avg health is stored in a var, the initial code didnt calculate it right
+
+
+
+        string text = $"Total microbes: {_microbes.Count} Avg health {avgHealth}";
         totalAndAvgMicrobes.text = text;
 
         if (useDebug)
